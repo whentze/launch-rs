@@ -41,26 +41,6 @@ fn run() -> Result<(), Error> {
     println!("Clear screen...");
     lpad.light_all(0);
 
-    // println!("Fuzzy!");
-    // for r in 0..255 {
-    //     if r % 10 != 0 {
-    //         continue;
-    //     }
-    //     for g in 0..255 {
-    //         if g % 10 != 0 {
-    //             continue;
-    //         }
-    //         for b in 0..255 {
-    //             if b % 10 != 0 {
-    //                 continue;
-    //             }
-    //             lpad.light_fuzzy_rgb(11, r, g, b);
-    //         }
-    //     }
-    // }
-    // thread::sleep(Duration::from_millis(500));
-    // println!("Fuzzy!");
-
     println!("Columns on!");
     for i in 0..9 {
         lpad.light_column(&ColorColumn {
