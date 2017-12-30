@@ -5,13 +5,11 @@ pub struct RGBColor {
     blue: u8,
 }
 
-pub struct RGColor {
-    red: u8,
-    green: u8,
-}
+#[derive(Debug, Copy, Clone)]
+pub struct RGColor(u8);
 
 pub fn rg(red: u8, green: u8) -> RGColor {
-    RGColor{ red, green }
+    RGColor(red/70 + green/70 << 4)
 }
 
 /// Use the 3d nearest neighbor to determine an approximation for RGB colors
