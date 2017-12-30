@@ -10,6 +10,10 @@ pub struct RGColor {
     green: u8,
 }
 
+pub fn rg(red: u8, green: u8) -> RGColor {
+    RGColor{ red, green }
+}
+
 /// Use the 3d nearest neighbor to determine an approximation for RGB colors
 pub fn nearest_palette(red: u8, green: u8, blue: u8) -> u8 {
     let mut ifurthest = 0usize;

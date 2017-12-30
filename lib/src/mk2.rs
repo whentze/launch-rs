@@ -14,8 +14,7 @@ pub struct LaunchpadMk2 {
 }
 
 impl Launchpad for LaunchpadMk2 {
-    type Color = RGBColor;
-    type PaletteIndex = u8;
+    type Color = u8;
 
     /// Attempt to find the first Launchpad Mark 2 by scanning
     /// available MIDI ports with matching names
@@ -64,7 +63,7 @@ impl Launchpad for LaunchpadMk2 {
         })
     }
     /// Set all LEDs to the same color
-    fn light_all(&mut self, color: Self::PaletteIndex) {
+    fn light_all(&mut self, color: Self::Color) {
         assert_color(color);
         // F0h 00h 20h 29h 02h 18h 0Eh <Colour> F7h
         // Message cannot be repeated.
