@@ -19,7 +19,7 @@ fn main() {
         list();
     }
 
-    run();
+    run().unwrap_or_else(|e| eprintln!("{}", e));
 }
 
 fn list() -> ! {
@@ -33,10 +33,10 @@ fn list() -> ! {
     process::exit(0);
 }
 
-fn run() {
+fn run() -> Result<(), Error> {
     println!("Please enjoy!");
     let timeout = Duration::from_millis(1);
-    let mut lpad = LaunchpadMk2::guess();
+    let mut lpad = LaunchpadMk2::guess()?;
 
     println!("Clear screen...");
     lpad.light_all(0);
